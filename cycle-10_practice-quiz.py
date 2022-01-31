@@ -67,4 +67,33 @@ def fib_nums(x):
 print(fib_nums(5) == [0,1,1,2,3], fib_nums(10) == [0,1,1,2,3,5,8,13,21,34])
 
 
+# Problem_self
 
+# There are two lists here, a lists of players and a list of 4 colors. Each player is matched with the color with the same index in the other list. Write a function color_matching(list1,list2)
+# which will take the two lists as parameters to return a new list that has 4 nested list, each represents a color. The nested lists should contain the names and their representing color.
+# For example: [['p1: red', 'p2: red'],['p3: green','p4: green'],['p5: blue', 'p6: blue']
+# The lists to be used are:
+# player_list = ['p1','p3','p4','p2','p8','p7','p5','p6']
+# color_list = ['red','green','green','blue','red','yellow','red','blue']
+
+
+# answer:
+def matching_color(l1, l2):
+    new = [[],[],[],[]]
+    for i,v in enumerate(l1):
+        if l2[i] == "red":
+            new[0].append(l1[i] + ": " + l2[i])
+        elif l2[i] == "green":
+            new[1].append(l1[i] + ": " + l2[i])
+        elif l2[i] == "blue":
+            new[2].append(l1[i] + ": " + l2[i])
+        elif l2[i] == "yellow":
+            new[3].append(l1[i] + ": " + l2[i])
+    
+    return new
+
+player_list = ['p1','p3','p4','p2','p8','p7','p5','p6']
+color_list = ['red','green','green','blue','red','yellow','red','blue']
+
+print(matching_color(player_list, color_list))
+        
